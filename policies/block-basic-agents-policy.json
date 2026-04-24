@@ -1,0 +1,27 @@
+{
+  "mode": "All",
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.CognitiveServices/accounts"
+        },
+        {
+          "field": "kind",
+          "equals": "AIServices"
+        },
+        {
+          "count": {
+            "field": "Microsoft.CognitiveServices/accounts/userOwnedStorage[*]"
+          },
+          "equals": 0
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {}
+}

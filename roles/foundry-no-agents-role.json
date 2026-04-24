@@ -1,0 +1,21 @@
+{
+  "Name": "Foundry User - No Agents",
+  "Description": "Grants Foundry access but blocks all Agent Service operations. Assign Azure AI User at project scope after standard setup to selectively enable agents.",
+  "IsCustom": true,
+  "AssignableScopes": [
+    "/subscriptions/<SUBSCRIPTION_ID>"
+  ],
+  "Actions": [
+    "Microsoft.CognitiveServices/*/read",
+    "Microsoft.Authorization/*/read",
+    "Microsoft.CognitiveServices/accounts/listkeys/action",
+    "Microsoft.Resources/deployments/*"
+  ],
+  "NotActions": [],
+  "DataActions": [
+    "Microsoft.CognitiveServices/accounts/AIServices/*"
+  ],
+  "NotDataActions": [
+    "Microsoft.CognitiveServices/accounts/AIServices/agents/*"
+  ]
+}
